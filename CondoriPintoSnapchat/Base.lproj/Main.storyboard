@@ -64,6 +64,15 @@
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZzZ-Q7-QeH"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3GB-XD-Qox" customClass="GIDSignInButton">
+                                <rect key="frame" x="76" y="468" width="240" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <action selector="iniciargoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgj-SS-2cP"/>
+                                    <action selector="tappedSigniN:" destination="BYZ-38-t0r" eventType="valueChanged" id="b7b-BL-mXz"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,11 +95,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="yOs-fT-iMC" id="5Wx-HV-7dG"/>
                         <outlet property="passwordTextField" destination="RsH-0P-eXG" id="CYD-1Y-9ge"/>
+                        <outlet property="signInButton" destination="3GB-XD-Qox" id="tgA-S9-IhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="4"/>
+            <point key="canvasLocation" x="32.824427480916029" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
