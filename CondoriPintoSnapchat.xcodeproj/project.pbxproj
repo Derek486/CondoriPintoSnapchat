@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF152E202C050AF3000E4957 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E1F2C050AF3000E4957 /* SnapsViewController.swift */; };
+		FF152E222C050D79000E4957 /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E212C050D79000E4957 /* ImagenViewController.swift */; };
+		FF152E242C0514EA000E4957 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FF152E232C0514EA000E4957 /* FirebaseStorage */; };
+		FF152E262C0514F2000E4957 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FF152E252C0514F2000E4957 /* FirebaseDatabase */; };
+		FF152E282C0519C0000E4957 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E272C0519C0000E4957 /* ElegirUsuarioViewController.swift */; };
+		FF152E2C2C051CEF000E4957 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E2B2C051CEF000E4957 /* Usuario.swift */; };
+		FF152E2E2C051FF5000E4957 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */; };
 		FFAE9B572BFBCB8700D4DE88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */; };
 		FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */; };
 		FFAE9B5B2BFBCB8700D4DE88 /* iniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B5A2BFBCB8700D4DE88 /* iniciarSesionViewController.swift */; };
@@ -22,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF152E1F2C050AF3000E4957 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		FF152E212C050D79000E4957 /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
+		FF152E272C0519C0000E4957 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
+		FF152E2B2C051CEF000E4957 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		FFAE9B532BFBCB8700D4DE88 /* CondoriPintoSnapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CondoriPintoSnapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,12 +55,34 @@
 				FFAE9B782BFBD8A400D4DE88 /* GoogleSignIn in Frameworks */,
 				FFAE9B6E2BFBD01700D4DE88 /* FirebaseAnalytics in Frameworks */,
 				FFAE9B702BFBD01700D4DE88 /* FirebaseAuth in Frameworks */,
+				FF152E262C0514F2000E4957 /* FirebaseDatabase in Frameworks */,
+				FF152E242C0514EA000E4957 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF152E292C051CAC000E4957 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE9B5A2BFBCB8700D4DE88 /* iniciarSesionViewController.swift */,
+				FF152E272C0519C0000E4957 /* ElegirUsuarioViewController.swift */,
+				FF152E212C050D79000E4957 /* ImagenViewController.swift */,
+				FF152E1F2C050AF3000E4957 /* SnapsViewController.swift */,
+				FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF152E2A2C051CCD000E4957 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				FF152E2B2C051CEF000E4957 /* Usuario.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
 		FFAE9B4A2BFBCB8700D4DE88 = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +103,10 @@
 		FFAE9B552BFBCB8700D4DE88 /* CondoriPintoSnapchat */ = {
 			isa = PBXGroup;
 			children = (
+				FF152E2A2C051CCD000E4957 /* Modelos */,
+				FF152E292C051CAC000E4957 /* ViewControllers */,
 				FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */,
 				FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */,
-				FFAE9B5A2BFBCB8700D4DE88 /* iniciarSesionViewController.swift */,
 				FFAE9B5C2BFBCB8700D4DE88 /* Main.storyboard */,
 				FFAE9B5F2BFBCB8800D4DE88 /* Assets.xcassets */,
 				FFAE9B612BFBCB8800D4DE88 /* LaunchScreen.storyboard */,
@@ -110,6 +145,8 @@
 				FFAE9B742BFBD53600D4DE88 /* FirebaseAnalyticsSwift */,
 				FFAE9B772BFBD8A400D4DE88 /* GoogleSignIn */,
 				FFAE9B792BFBD8A400D4DE88 /* GoogleSignInSwift */,
+				FF152E232C0514EA000E4957 /* FirebaseStorage */,
+				FF152E252C0514F2000E4957 /* FirebaseDatabase */,
 			);
 			productName = CondoriPintoSnapchat;
 			productReference = FFAE9B532BFBCB8700D4DE88 /* CondoriPintoSnapchat.app */;
@@ -171,9 +208,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF152E202C050AF3000E4957 /* SnapsViewController.swift in Sources */,
+				FF152E222C050D79000E4957 /* ImagenViewController.swift in Sources */,
+				FF152E2C2C051CEF000E4957 /* Usuario.swift in Sources */,
 				FFAE9B5B2BFBCB8700D4DE88 /* iniciarSesionViewController.swift in Sources */,
 				FFAE9B572BFBCB8700D4DE88 /* AppDelegate.swift in Sources */,
+				FF152E2E2C051FF5000E4957 /* RegistroViewController.swift in Sources */,
 				FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */,
+				FF152E282C0519C0000E4957 /* ElegirUsuarioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +454,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF152E232C0514EA000E4957 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		FF152E252C0514F2000E4957 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		FFAE9B6D2BFBD01700D4DE88 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

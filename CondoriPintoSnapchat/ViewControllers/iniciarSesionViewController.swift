@@ -9,6 +9,8 @@ import UIKit
 
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 import GoogleSignIn
 
 class iniciarSesionViewController: UIViewController {
@@ -48,18 +50,18 @@ class iniciarSesionViewController: UIViewController {
 
                 if error != nil {
                     print("Error \(error!)")
+                    let alerta = UIAlertController(title: "Inicio de sesión fallido", message: "Error al momento de intentar ingresar mediante credenciales de Google", preferredStyle: .alert)
+                    let btncancelar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                    alerta.addAction(btncancelar)
+                    self.present(alerta, animated: true, completion: nil)
                 } else {
-                    
                     print("Inicio de sesion correcto con GOOGLE")
+                    self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
                 }
             }
                 
           // ...
         }
-    }
-    
-    @IBAction func tappedSigniN(_ sender: Any) {
-        
     }
     @IBOutlet weak var signInButton: GIDSignInButton!
     
@@ -70,8 +72,17 @@ class iniciarSesionViewController: UIViewController {
             print("Iniciando sesión...")
             if error != nil {
                 print("Error al iniciar sesión \(error!)")
+                let alerta = UIAlertController(title: "Inicio de sesión fallido", message: "Las credenciales proporcionadas no corresponden a ningún usuario, si no posee unas, puede crear un nuevo usuario en la vista de registro", preferredStyle: .alert)
+                let btncrear = UIAlertAction(title: "Crear usuario", style: .default, handler: {(UIAlertAction) in
+                    self.performSegue(withIdentifier: "registroSegue", sender: nil)
+                })
+                let btncancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+                alerta.addAction(btncrear)
+                alerta.addAction(btncancelar)
+                self.present(alerta, animated: true, completion: nil)
             } else {
                 print("Inicio de sesión exitoso")
+                self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
             }
         }
     }
