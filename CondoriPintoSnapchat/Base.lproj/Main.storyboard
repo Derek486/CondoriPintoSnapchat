@@ -310,6 +310,29 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fIh-oz-1va">
                                 <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioRow" textLabel="iss-Ef-xKE" imageView="Gqi-rx-gRc" style="IBUITableViewCellStyleDefault" id="lgc-MT-Pir">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgc-MT-Pir" id="N8c-pN-WDX">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iss-Ef-xKE">
+                                                    <rect key="frame" x="59" y="0.0" width="314" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="grabar 1" id="Gqi-rx-gRc">
+                                                    <rect key="frame" x="20" y="9.6666666666666643" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4X3-W4-Lb3"/>
@@ -328,6 +351,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fIh-oz-1va" id="Zwy-KS-evs"/>
+                        <segue destination="SVb-0b-DnT" kind="show" identifier="veraudiosegue" id="T1E-SQ-zpu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tie-Q3-IDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,11 +374,33 @@
                                 <buttonConfiguration key="configuration" style="plain" image="grabar 1" title="Grabar">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="grabarTapped:" destination="O3n-br-GY3" eventType="touchUpInside" id="hd5-KQ-1fj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXG-N2-gBA">
                                 <rect key="frame" x="130.66666666666669" y="144" width="131.66666666666669" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="reproducir 1" title="Reproducir"/>
+                                <connections>
+                                    <action selector="reproducirTapped:" destination="O3n-br-GY3" eventType="touchUpInside" id="20G-EA-jfA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripción..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cge-Qd-Bl3">
+                                <rect key="frame" x="79.666666666666686" y="214" width="234" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3U-qQ-Jh0">
+                                <rect key="frame" x="79.666666666666686" y="268" width="234.00000000000006" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Elegir Contacto" titleAlignment="center">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="agregarTapped:" destination="O3n-br-GY3" eventType="touchUpInside" id="ufo-sC-5rA"/>
+                                    <action selector="elegirContactoTapped:" destination="e1r-0J-0zf" eventType="touchUpInside" id="WZP-km-eJQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bMJ-6F-ZEt"/>
@@ -359,15 +408,83 @@
                         <constraints>
                             <constraint firstItem="Twg-5p-AQk" firstAttribute="centerX" secondItem="YqI-GM-yUr" secondAttribute="centerX" id="4tT-ah-8bH"/>
                             <constraint firstItem="HXG-N2-gBA" firstAttribute="centerX" secondItem="Twg-5p-AQk" secondAttribute="centerX" id="6gX-Op-T4D"/>
+                            <constraint firstItem="cge-Qd-Bl3" firstAttribute="top" secondItem="HXG-N2-gBA" secondAttribute="bottom" constant="32" id="QTL-ki-sw6"/>
+                            <constraint firstItem="cge-Qd-Bl3" firstAttribute="centerX" secondItem="HXG-N2-gBA" secondAttribute="centerX" id="Vrb-rI-Dgh"/>
+                            <constraint firstItem="o3U-qQ-Jh0" firstAttribute="top" secondItem="cge-Qd-Bl3" secondAttribute="bottom" constant="20" id="WS9-hc-hAt"/>
                             <constraint firstItem="Twg-5p-AQk" firstAttribute="top" secondItem="bMJ-6F-ZEt" secondAttribute="top" constant="30" id="fhq-Tx-Ybh"/>
+                            <constraint firstItem="o3U-qQ-Jh0" firstAttribute="centerX" secondItem="cge-Qd-Bl3" secondAttribute="centerX" id="gHJ-ZO-Gs5"/>
+                            <constraint firstItem="cge-Qd-Bl3" firstAttribute="width" secondItem="HXG-N2-gBA" secondAttribute="width" multiplier="1.77722" id="lFC-It-48J"/>
                             <constraint firstItem="HXG-N2-gBA" firstAttribute="top" secondItem="Twg-5p-AQk" secondAttribute="bottom" constant="20" id="oJS-7X-bHh"/>
+                            <constraint firstItem="o3U-qQ-Jh0" firstAttribute="width" secondItem="cge-Qd-Bl3" secondAttribute="width" id="ocV-Iu-Eum"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pwk-ah-U7v"/>
+                    <connections>
+                        <outlet property="agregarButton" destination="o3U-qQ-Jh0" id="jLk-oN-Reb"/>
+                        <outlet property="elegirContactoButton" destination="o3U-qQ-Jh0" id="VWt-6Q-WqG"/>
+                        <outlet property="grabarButton" destination="Twg-5p-AQk" id="eqn-wI-yNm"/>
+                        <outlet property="nombreTextField" destination="cge-Qd-Bl3" id="zAO-bG-RPU"/>
+                        <outlet property="reproducirButton" destination="HXG-N2-gBA" id="a0H-xY-uXI"/>
+                        <segue destination="ysC-jl-0JA" kind="show" identifier="seleccionarContactoSegueAudio" id="URc-kL-cdu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBQ-ea-RKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="1375"/>
+            <point key="canvasLocation" x="2243.5114503816794" y="1374.6478873239437"/>
+        </scene>
+        <!--Ver Audio View Controller-->
+        <scene sceneID="3Ws-1R-wxx">
+            <objects>
+                <viewController id="SVb-0b-DnT" customClass="VerAudioViewController" customModule="CondoriPintoSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ymw-lD-hK8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-av-ryB">
+                                <rect key="frame" x="30" y="81" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio enviado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFI-fd-EkV">
+                                <rect key="frame" x="30" y="120.66666666666669" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3J2-EA-ZRF">
+                                <rect key="frame" x="130.66666666666669" y="181.66666666666666" width="131.66666666666669" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="reproducir 1" title="Reproducir"/>
+                                <connections>
+                                    <action selector="reproducirTapped:" destination="O3n-br-GY3" eventType="touchUpInside" id="oRN-lg-QPP"/>
+                                    <action selector="reproducirTapped:" destination="SVb-0b-DnT" eventType="touchUpInside" id="xUN-4c-4Sd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rfB-ig-kTk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3J2-EA-ZRF" firstAttribute="top" secondItem="eFI-fd-EkV" secondAttribute="bottom" constant="40" id="38L-QQ-E4L"/>
+                            <constraint firstItem="eFI-fd-EkV" firstAttribute="top" secondItem="g8U-av-ryB" secondAttribute="bottom" constant="18.666666666666671" id="BkG-y9-mtg"/>
+                            <constraint firstItem="g8U-av-ryB" firstAttribute="top" secondItem="rfB-ig-kTk" secondAttribute="top" constant="25" id="NEZ-ao-NUj"/>
+                            <constraint firstItem="3J2-EA-ZRF" firstAttribute="centerX" secondItem="eFI-fd-EkV" secondAttribute="centerX" id="S7x-ab-Smb"/>
+                            <constraint firstItem="eFI-fd-EkV" firstAttribute="width" secondItem="g8U-av-ryB" secondAttribute="width" id="YUa-Br-EC9"/>
+                            <constraint firstItem="eFI-fd-EkV" firstAttribute="centerX" secondItem="g8U-av-ryB" secondAttribute="centerX" id="iTa-8z-hvk"/>
+                            <constraint firstItem="g8U-av-ryB" firstAttribute="leading" secondItem="rfB-ig-kTk" secondAttribute="leading" constant="30" id="p3A-BD-fKm"/>
+                            <constraint firstItem="eFI-fd-EkV" firstAttribute="height" secondItem="g8U-av-ryB" secondAttribute="height" id="yvU-z9-t2F"/>
+                            <constraint firstItem="rfB-ig-kTk" firstAttribute="trailing" secondItem="g8U-av-ryB" secondAttribute="trailing" constant="30" id="zKw-EI-QGL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ozd-XQ-Gfp"/>
+                    <connections>
+                        <outlet property="lblMensaje" destination="g8U-av-ryB" id="Ncb-9G-L18"/>
+                        <outlet property="reproducirrButton" destination="3J2-EA-ZRF" id="eS0-Op-zfC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghL-ko-EeM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="2101"/>
         </scene>
         <!--Enviar mensaje-->
         <scene sceneID="4kn-lE-HKz">
@@ -489,6 +606,9 @@
             <point key="canvasLocation" x="825.19083969465646" y="14.788732394366198"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="URc-kL-cdu"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="grabar 1" width="24" height="24"/>
         <image name="imagen" width="70" height="70"/>

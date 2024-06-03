@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 import AVFoundation
 
 class CrearAudioViewController: UIViewController {
@@ -14,11 +16,12 @@ class CrearAudioViewController: UIViewController {
         @IBOutlet weak var nombreTextField: UITextField!
         @IBOutlet weak var reproducirButton: UIButton!
         @IBOutlet weak var grabarButton: UIButton!
-        @IBOutlet weak var duracionGrabacion: UILabel!
-        
+        @IBOutlet weak var elegirContactoButton: UIButton!
+    
         var grabarAudio: AVAudioRecorder?
         var reproducirAudio: AVAudioPlayer?
         var audioURL: URL?
+        var audioId = NSUUID().uuidString
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -38,7 +41,7 @@ class CrearAudioViewController: UIViewController {
             //creando direccion para el archivo de audio
             let basePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask,
             true).first!
-            let pathComponents = [basePath, "audio.m4a"]
+            let pathComponents = [basePath, "\(audioId).m4a"]
             audioURL = NSURL.fileURL (withPathComponents: pathComponents)!
             //impresion de ruta donde se guardan los archivos
             print("*********************")
@@ -57,30 +60,41 @@ class CrearAudioViewController: UIViewController {
         }
         }
         
-        func getContext() -> NSManagedObjectContext {
-            return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBAction func agregarTapped(_ sender: Any) {
+            let grabacion = Audio()
+            let storageRef = Storage.storage().reference().child("audios").child(audioId + ".m4a")
+            storageRef.putFile(from: audioURL!, metadata: nil) {(meta, error) in
+                if error != nil {
+                    self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al subir el audio. Verifique su conexión a internet y vuelva a intentarlo", accion: "Aceptar")
+                    self.elegirContactoButton.isEnabled = true
+                    print("Ocurrio un error al subir el audio: \(error!)")
+                    return
+                } else {
+                    storageRef.downloadURL(completion: { (url, error) in
+                        guard let enlaceURL = url else {
+                            self.mostrarAlerta(titulo: "Error", mensaje: "Se obtuvo un error al intentar obtener información de audio", accion: "Cancelar")
+                            self.elegirContactoButton.isEnabled = true
+                            print("Ocurrió un error la obtener información de audio \(error)")
+                            return
+                            
+                        }
+                        self.performSegue(withIdentifier: "seleccionarContactoSegueAudio", sender: url?.absoluteString)
+                    })
+                }
+            }
         }
-        
-        func guardarContexto() {
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        }
-        
-        @IBAction func agregarTapped(_ sender: Any) {
-            let context = getContext()
-            let grabacion = Grabacion(context: context)
-            grabacion.nombre = nombreTextField.text
-            grabacion.audio = NSData(contentsOf: audioURL!)! as Data
-            guardarContexto()
-            navigationController!.popViewController(animated: true)
-        }
-        @IBAction func reproducirTapped(_ sender: Any) {
+    
+    @IBAction func reproducirTapped(_ sender: Any) {
             do {
                 try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
                 reproducirAudio!.play()
                 print("Reproduciendo...")
             } catch {}
         }
-        @IBAction func grabarTapped(_ sender: Any) {
+    
+
+    @IBAction func grabarTapped(_ sender: Any) {
             if grabarAudio!.isRecording {
                 grabarAudio?.stop()
                 grabarButton?.setTitle("GRABAR", for: .normal)
@@ -89,7 +103,6 @@ class CrearAudioViewController: UIViewController {
                     let formatter = DateComponentsFormatter()
                     formatter.allowedUnits = [.hour, .minute, .second]
                     formatter.unitsStyle = .short
-                    duracionGrabacion.text = formatter.string(from: audio.duration)
                 } catch {}
                 reproducirButton.isEnabled = true
                 agregarButton.isEnabled = true
@@ -100,5 +113,19 @@ class CrearAudioViewController: UIViewController {
             }
         }
 
+    func mostrarAlerta(titulo: String, mensaje: String, accion: String) {
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        let btnCANCELOK = UIAlertAction(title: accion, style: .default, handler: nil)
+        alerta.addAction(btnCANCELOK)
+        present(alerta, animated: true, completion: nil)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextvc = segue.destination as! ElegirUsuarioViewController
+        nextvc.descrip = nombreTextField.text!
+        nextvc.type = "audio"
+        nextvc.audioURL = (sender as! String)
+        nextvc.audioID = audioId
+    }
 }

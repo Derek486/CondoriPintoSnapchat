@@ -9,5 +9,8 @@ import Foundation
 
 class Audio {
     var id = ""
+    var from = ""
     var descripcion = ""
+    var audioID = ""
+    var audioURL = ""
 }

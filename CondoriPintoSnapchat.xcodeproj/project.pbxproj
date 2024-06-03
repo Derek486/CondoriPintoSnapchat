@@ -21,6 +21,7 @@
 		FFA68E0A2C0E53A000D76598 /* AudiosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E092C0E53A000D76598 /* AudiosViewController.swift */; };
 		FFA68E0C2C0E558300D76598 /* CrearAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */; };
 		FFA68E0E2C0E583A00D76598 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E0D2C0E583A00D76598 /* Audio.swift */; };
+		FFA68E102C0E625F00D76598 /* VerAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E0F2C0E625F00D76598 /* VerAudioViewController.swift */; };
 		FFAE9B572BFBCB8700D4DE88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */; };
 		FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */; };
 		FFAE9B5B2BFBCB8700D4DE88 /* iniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B5A2BFBCB8700D4DE88 /* iniciarSesionViewController.swift */; };
@@ -46,6 +47,7 @@
 		FFA68E092C0E53A000D76598 /* AudiosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiosViewController.swift; sourceTree = "<group>"; };
 		FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearAudioViewController.swift; sourceTree = "<group>"; };
 		FFA68E0D2C0E583A00D76598 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		FFA68E0F2C0E625F00D76598 /* VerAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerAudioViewController.swift; sourceTree = "<group>"; };
 		FFAE9B532BFBCB8700D4DE88 /* CondoriPintoSnapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CondoriPintoSnapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				FFA68E022C0E475300D76598 /* VerSnapViewController.swift */,
 				FFA68E092C0E53A000D76598 /* AudiosViewController.swift */,
 				FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */,
+				FFA68E0F2C0E625F00D76598 /* VerAudioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */,
 				FF152E282C0519C0000E4957 /* ElegirUsuarioViewController.swift in Sources */,
 				FFA68E0C2C0E558300D76598 /* CrearAudioViewController.swift in Sources */,
+				FFA68E102C0E625F00D76598 /* VerAudioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
