@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAnalyticsSwift
-import FirebaseCorew
+import FirebaseCore
 import GoogleSignIn
 
 @main

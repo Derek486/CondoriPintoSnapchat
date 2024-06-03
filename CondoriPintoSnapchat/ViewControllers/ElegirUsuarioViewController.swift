@@ -12,6 +12,9 @@ import FirebaseDatabase
 class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var usuarios:[Usuario] = []
+    var imageURL = ""
+    var descrip = ""
+    var imagenID = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +43,14 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var listaUsuarios: UITableView!
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let usuario = usuarios[indexPath.row]
+        let snap = ["from": Auth.auth().currentUser?.email, "descripcion": descrip, "imagenURL": imageURL, "imagenID": imagenID]
+        
+        Database.database().reference().child("usuarios").child(usuario.uid).child("snaps")
+            .childByAutoId().setValue(snap)
+        
+        navigationController?.popViewController(animated: true)
     }
-    */
 
 }

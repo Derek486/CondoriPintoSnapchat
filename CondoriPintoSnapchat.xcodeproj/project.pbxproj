@@ -14,6 +14,13 @@
 		FF152E282C0519C0000E4957 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E272C0519C0000E4957 /* ElegirUsuarioViewController.swift */; };
 		FF152E2C2C051CEF000E4957 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E2B2C051CEF000E4957 /* Usuario.swift */; };
 		FF152E2E2C051FF5000E4957 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */; };
+		FFA68E012C0E448000D76598 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E002C0E448000D76598 /* Snap.swift */; };
+		FFA68E032C0E475300D76598 /* VerSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E022C0E475300D76598 /* VerSnapViewController.swift */; };
+		FFA68E062C0E4A1100D76598 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FFA68E052C0E4A1100D76598 /* SDWebImage */; };
+		FFA68E082C0E4A1100D76598 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFA68E072C0E4A1100D76598 /* SDWebImageMapKit */; };
+		FFA68E0A2C0E53A000D76598 /* AudiosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E092C0E53A000D76598 /* AudiosViewController.swift */; };
+		FFA68E0C2C0E558300D76598 /* CrearAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */; };
+		FFA68E0E2C0E583A00D76598 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA68E0D2C0E583A00D76598 /* Audio.swift */; };
 		FFAE9B572BFBCB8700D4DE88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */; };
 		FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */; };
 		FFAE9B5B2BFBCB8700D4DE88 /* iniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE9B5A2BFBCB8700D4DE88 /* iniciarSesionViewController.swift */; };
@@ -34,6 +41,11 @@
 		FF152E272C0519C0000E4957 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
 		FF152E2B2C051CEF000E4957 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		FFA68E002C0E448000D76598 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		FFA68E022C0E475300D76598 /* VerSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerSnapViewController.swift; sourceTree = "<group>"; };
+		FFA68E092C0E53A000D76598 /* AudiosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiosViewController.swift; sourceTree = "<group>"; };
+		FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearAudioViewController.swift; sourceTree = "<group>"; };
+		FFA68E0D2C0E583A00D76598 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		FFAE9B532BFBCB8700D4DE88 /* CondoriPintoSnapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CondoriPintoSnapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAE9B562BFBCB8700D4DE88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAE9B582BFBCB8700D4DE88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +63,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAE9B7A2BFBD8A400D4DE88 /* GoogleSignInSwift in Frameworks */,
+				FFA68E082C0E4A1100D76598 /* SDWebImageMapKit in Frameworks */,
 				FFAE9B752BFBD53600D4DE88 /* FirebaseAnalyticsSwift in Frameworks */,
+				FFA68E062C0E4A1100D76598 /* SDWebImage in Frameworks */,
 				FFAE9B782BFBD8A400D4DE88 /* GoogleSignIn in Frameworks */,
 				FFAE9B6E2BFBD01700D4DE88 /* FirebaseAnalytics in Frameworks */,
 				FFAE9B702BFBD01700D4DE88 /* FirebaseAuth in Frameworks */,
@@ -71,6 +85,9 @@
 				FF152E212C050D79000E4957 /* ImagenViewController.swift */,
 				FF152E1F2C050AF3000E4957 /* SnapsViewController.swift */,
 				FF152E2D2C051FF5000E4957 /* RegistroViewController.swift */,
+				FFA68E022C0E475300D76598 /* VerSnapViewController.swift */,
+				FFA68E092C0E53A000D76598 /* AudiosViewController.swift */,
+				FFA68E0B2C0E558300D76598 /* CrearAudioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -79,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				FF152E2B2C051CEF000E4957 /* Usuario.swift */,
+				FFA68E002C0E448000D76598 /* Snap.swift */,
+				FFA68E0D2C0E583A00D76598 /* Audio.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -147,6 +166,8 @@
 				FFAE9B792BFBD8A400D4DE88 /* GoogleSignInSwift */,
 				FF152E232C0514EA000E4957 /* FirebaseStorage */,
 				FF152E252C0514F2000E4957 /* FirebaseDatabase */,
+				FFA68E052C0E4A1100D76598 /* SDWebImage */,
+				FFA68E072C0E4A1100D76598 /* SDWebImageMapKit */,
 			);
 			productName = CondoriPintoSnapchat;
 			productReference = FFAE9B532BFBCB8700D4DE88 /* CondoriPintoSnapchat.app */;
@@ -179,6 +200,7 @@
 			packageReferences = (
 				FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FFAE9B762BFBD8A400D4DE88 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				FFA68E042C0E4A1100D76598 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = FFAE9B542BFBCB8700D4DE88 /* Products */;
 			projectDirPath = "";
@@ -210,12 +232,17 @@
 			files = (
 				FF152E202C050AF3000E4957 /* SnapsViewController.swift in Sources */,
 				FF152E222C050D79000E4957 /* ImagenViewController.swift in Sources */,
+				FFA68E012C0E448000D76598 /* Snap.swift in Sources */,
 				FF152E2C2C051CEF000E4957 /* Usuario.swift in Sources */,
+				FFA68E032C0E475300D76598 /* VerSnapViewController.swift in Sources */,
 				FFAE9B5B2BFBCB8700D4DE88 /* iniciarSesionViewController.swift in Sources */,
 				FFAE9B572BFBCB8700D4DE88 /* AppDelegate.swift in Sources */,
+				FFA68E0E2C0E583A00D76598 /* Audio.swift in Sources */,
+				FFA68E0A2C0E53A000D76598 /* AudiosViewController.swift in Sources */,
 				FF152E2E2C051FF5000E4957 /* RegistroViewController.swift in Sources */,
 				FFAE9B592BFBCB8700D4DE88 /* SceneDelegate.swift in Sources */,
 				FF152E282C0519C0000E4957 /* ElegirUsuarioViewController.swift in Sources */,
+				FFA68E0C2C0E558300D76598 /* CrearAudioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +462,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FFA68E042C0E4A1100D76598 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -463,6 +498,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAE9B6C2BFBD01700D4DE88 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		FFA68E052C0E4A1100D76598 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFA68E042C0E4A1100D76598 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		FFA68E072C0E4A1100D76598 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFA68E042C0E4A1100D76598 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 		FFAE9B6D2BFBD01700D4DE88 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
